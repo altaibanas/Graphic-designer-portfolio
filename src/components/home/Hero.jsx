@@ -101,7 +101,7 @@ export const Hero = () => {
           <div className="lg:w-1/2 flex justify-center relative">
             <div className="relative max-w-md lg:max-w-lg">
               <img
-                src="/public/images/hero.webp"
+                src="public/images/hero.webp"
                 alt="Anas Al-Tayeb creative branding and design showcase"
                 width={400}
                 height={250}
