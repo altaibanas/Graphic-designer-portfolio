@@ -35,7 +35,7 @@ export const ProcessSteps = () => {
   return (
     <section className="py-20 bg-slate-50 dark:bg-night-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 reveal-up">
           <span className="inline-block bg-amber-500/10 text-amber-600 dark:text-amber-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black mb-4 border border-amber-500/20">
             {t("process.badge")}
           </span>
@@ -49,10 +49,10 @@ export const ProcessSteps = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step) => (
+          {steps.map((step, idx) => (
             <div
               key={step.num}
-              className="bg-white dark:bg-slate-850/70 rounded-3xl p-8 shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 relative group hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between"
+              className={`bg-white dark:bg-slate-850/70 rounded-3xl p-8 shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 relative group hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between reveal-right delay-${(idx + 1) * 100}`}
             >
               <span className="text-5xl font-black text-slate-200 dark:text-slate-800 absolute top-4 end-4 select-none group-hover:text-amber-500/20 transition-colors">
                 {step.num}

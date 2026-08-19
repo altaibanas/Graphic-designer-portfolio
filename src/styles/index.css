@@ -408,3 +408,224 @@ body {
   border-color: #d4af37;
   transform: rotate(90deg) scale(1.05);
 }
+
+/* ==========================================================================
+   SMOOTH SCROLLING & TOC HEADING OFFSETS
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent sticky header from overlapping article section headings when clicked */
+.toc-target,
+h2[id],
+h3[id],
+section[id] {
+  scroll-margin-top: 6.5rem; /* ~104px */
+}
+
+/* ==========================================================================
+   HIERARCHICAL SCROLL REVEAL ANIMATION SYSTEM
+   ========================================================================== */
+
+/* 1. Global Base Animation Variables */
+:root {
+  --reveal-duration: 450ms;
+  --reveal-timing: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --reveal-distance-y: 32px;
+  --reveal-distance-x: 36px;
+  --reveal-scale-from: 0.94;
+}
+
+/* 2. Page-Specific Scoped Variations */
+/* Home Page: Dynamic, spring-like rise */
+body.page-home {
+  --reveal-duration: 480ms;
+  --reveal-timing: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-distance-y: 35px;
+}
+
+/* About Page: Soft, narrative-driven glide */
+body.page-about {
+  --reveal-duration: 520ms;
+  --reveal-timing: cubic-bezier(0.25, 1, 0.5, 1);
+  --reveal-distance-y: 24px;
+  --reveal-distance-x: 30px;
+}
+
+/* Services Page: Snappy, rhythmic card entrances */
+body.page-services {
+  --reveal-duration: 420ms;
+  --reveal-timing: cubic-bezier(0.34, 1.25, 0.64, 1);
+  --reveal-distance-y: 28px;
+  --reveal-scale-from: 0.92;
+}
+
+/* Portfolio Page: Visual focus with subtle zoom expansion */
+body.page-portfolio {
+  --reveal-duration: 460ms;
+  --reveal-timing: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-scale-from: 0.88;
+  --reveal-distance-y: 28px;
+}
+
+/* Blog / Article Page: Minimal, distraction-free reading lift */
+body.page-blog {
+  --reveal-duration: 380ms;
+  --reveal-timing: ease-out;
+  --reveal-distance-y: 18px;
+}
+
+/* Contact Page: Focused inward reveal */
+body.page-contact {
+  --reveal-duration: 400ms;
+  --reveal-timing: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-distance-y: 25px;
+}
+
+/* 3. Keyframe Animations */
+@keyframes revealFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance-y));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealFadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--reveal-distance-x));
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealFadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(calc(-1 * var(--reveal-distance-x)));
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealFadeScale {
+  0% {
+    opacity: 0;
+    transform: scale(var(--reveal-scale-from)) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 4. Native CSS Scroll-Driven Animations (Modern View-Timeline) */
+@supports (animation-timeline: view()) {
+  .reveal-up {
+    animation: revealFadeUp var(--reveal-duration) var(--reveal-timing) both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  .reveal-right {
+    animation: revealFadeRight var(--reveal-duration) var(--reveal-timing) both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  .reveal-left {
+    animation: revealFadeLeft var(--reveal-duration) var(--reveal-timing) both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  .reveal-scale {
+    animation: revealFadeScale var(--reveal-duration) var(--reveal-timing) both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+}
+
+/* 5. Fallback for Browsers Without Native Scroll-Timeline */
+.no-scroll-timeline .reveal-up,
+.no-scroll-timeline .reveal-right,
+.no-scroll-timeline .reveal-left,
+.no-scroll-timeline .reveal-scale {
+  opacity: 0;
+  transition:
+    opacity var(--reveal-duration) var(--reveal-timing),
+    transform var(--reveal-duration) var(--reveal-timing);
+  will-change: opacity, transform;
+}
+
+.no-scroll-timeline .reveal-up {
+  transform: translateY(var(--reveal-distance-y));
+}
+
+.no-scroll-timeline .reveal-right {
+  transform: translateX(var(--reveal-distance-x));
+}
+
+.no-scroll-timeline .reveal-left {
+  transform: translateX(calc(-1 * var(--reveal-distance-x)));
+}
+
+.no-scroll-timeline .reveal-scale {
+  transform: scale(var(--reveal-scale-from)) translateY(12px);
+}
+
+.no-scroll-timeline .reveal-up.is-revealed,
+.no-scroll-timeline .reveal-right.is-revealed,
+.no-scroll-timeline .reveal-left.is-revealed,
+.no-scroll-timeline .reveal-scale.is-revealed {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* 6. Stagger Delays */
+.delay-100 {
+  animation-delay: 100ms;
+  transition-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+  transition-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+  transition-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+  transition-delay: 400ms;
+}
+
+/* 7. Reduced Motion Accessibility Support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-up,
+  .reveal-right,
+  .reveal-left,
+  .reveal-scale {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+

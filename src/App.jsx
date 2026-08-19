@@ -7,6 +7,7 @@ import { Footer } from "./components/common/Footer";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import { ErrorBoundary } from "./components/common/ErrorBoundary";
 import { PageSkeleton } from "./components/common/SkeletonLoader";
+import { useScrollRevealInit } from "./hooks/useScrollReveal";
 
 // Lazy-loaded route components for optimized initial bundle size & code splitting
 const HomePage = lazy(() =>
@@ -40,10 +41,17 @@ const NotFoundPage = lazy(() =>
 );
 
 export const App = () => {
+  useScrollRevealInit();
+
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <BrowserRouter>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <ScrollToTop />
           <div className="flex flex-col min-h-screen bg-[#f8fafc] dark:bg-[#0a0e17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
             <Navbar />

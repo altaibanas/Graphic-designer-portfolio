@@ -15,7 +15,7 @@ export const ServicesPreview = () => {
   return (
     <section id="services" className="py-20 bg-[#f8fafc] dark:bg-[#0a0e17] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 reveal-up">
           <span className="inline-block bg-amber-500/10 text-amber-600 dark:text-amber-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black mb-4 border border-amber-500/20">
             {t("services.badge")}
           </span>
@@ -29,10 +29,10 @@ export const ServicesPreview = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.slice(0, 3).map((service) => (
+          {services.slice(0, 3).map((service, sIdx) => (
             <div
               key={service.id}
-              className="creative-card card-hover bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between"
+              className={`creative-card card-hover bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between reveal-scale delay-${(sIdx + 1) * 100}`}
             >
               <div>
                 <div

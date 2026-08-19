@@ -6,27 +6,15 @@ import { navLinks } from "../../data/siteData";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 import { useLanguage } from "../../context/LanguageContext";
+import { useSmartHeader } from "../../hooks/useSmartHeader";
 
 export const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const { isVisible, isScrolled } = useSmartHeader(100, 6);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
   const { t } = useTranslation();
   const { isRtl } = useLanguage();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -53,8 +41,10 @@ export const Navbar = () => {
     <header
       ref={navRef}
       id="navbar"
-      className={`sticky-nav fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "scrolled" : ""
+      className={`sticky-nav fixed top-0 inset-x-0 w-full z-50 transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
+      } ${
+        isScrolled ? "scrolled shadow-lg" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

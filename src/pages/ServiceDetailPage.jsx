@@ -9,11 +9,14 @@ import { ProcessSteps } from "../components/services/ProcessSteps";
 import { ServiceCustomSection } from "../components/services/ServiceCustomSection";
 import { CtaBanner } from "../components/common/CtaBanner";
 import { SEO } from "../components/common/SEO";
+import { usePageTheme } from "../hooks/usePageTheme";
 
 export const ServiceDetailPage = () => {
   const { slug } = useParams();
   const { t } = useTranslation();
   const { isRtl } = useLanguage();
+
+  usePageTheme("page-services");
 
   const service = services.find((s) => s.slug === slug);
 
@@ -70,7 +73,7 @@ export const ServiceDetailPage = () => {
       <section className="py-20 bg-white dark:bg-[#0a0e17] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 mb-20">
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 reveal-left">
               <span className="inline-block bg-amber-500/10 text-amber-600 dark:text-amber-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black mb-4 border border-amber-500/20">
                 {t("services.overview")}
               </span>
@@ -110,7 +113,7 @@ export const ServiceDetailPage = () => {
               </div>
             </div>
 
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 reveal-right">
               <div className="relative">
                 <img
                   src={service.heroImage}

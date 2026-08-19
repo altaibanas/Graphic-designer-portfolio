@@ -6,10 +6,13 @@ import { PageHeader } from "../components/common/PageHeader";
 import { BlogGrid } from "../components/blog/BlogGrid";
 import { CtaBanner } from "../components/common/CtaBanner";
 import { blogPosts } from "../data/blogData";
+import { usePageTheme } from "../hooks/usePageTheme";
 
 export const BlogPage = () => {
   const { t } = useTranslation();
   const { isRtl } = useLanguage();
+
+  usePageTheme("page-blog");
 
   const title = isRtl
     ? "المدونة - مقالات ونصائح في التصميم الجرافيكي وبناء الهوية"

@@ -7,11 +7,14 @@ import { PortfolioFilter } from "../components/portfolio/PortfolioFilter";
 import { PortfolioGrid } from "../components/portfolio/PortfolioGrid";
 import { CtaBanner } from "../components/common/CtaBanner";
 import { portfolioItems } from "../data/portfolioData";
+import { usePageTheme } from "../hooks/usePageTheme";
 
 export const PortfolioPage = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const { t } = useTranslation();
   const { isRtl } = useLanguage();
+
+  usePageTheme("page-portfolio");
 
   const title = isRtl
     ? "معرض الأعمال - مشاريع الهوية البصرية والتصميم الجرافيكي"

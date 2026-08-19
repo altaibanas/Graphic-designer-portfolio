@@ -9,9 +9,11 @@ import { FeaturesBar } from "../components/home/FeaturesBar";
 import { PortfolioPreview } from "../components/home/PortfolioPreview";
 import { BlogPreview } from "../components/home/BlogPreview";
 import { CtaBanner } from "../components/common/CtaBanner";
+import { usePageTheme } from "../hooks/usePageTheme";
 
 export const HomePage = () => {
   const { isRtl } = useLanguage();
+  usePageTheme("page-home");
 
   const title = isRtl
     ? "الرئيسية - مصمم جرافيك واستشاري هوية بصرية"
@@ -58,7 +60,7 @@ export const HomePage = () => {
       />
       <div className="animate-in fade-in duration-300">
         <Hero />
-        <ToolsGrid />
+        {/* <ToolsGrid /> */}
         <ServicesPreview />
         <WhyChooseMe />
         <FeaturesBar />

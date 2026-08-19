@@ -12,7 +12,7 @@ export const ServiceCard = ({ service }) => {
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
   return (
-    <div className="creative-card card-hover bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between group">
+    <div className="creative-card card-hover bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between group reveal-scale">
       <div>
         <div
           className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.iconBg} flex items-center justify-center mb-6 border group-hover:scale-110 transition-transform`}

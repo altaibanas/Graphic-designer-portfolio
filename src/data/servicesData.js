@@ -92,7 +92,7 @@ export const services = [
         desc: "Detailed PDF documenting safe spacing, color codes, typography rules, and incorrect usage warnings.",
       },
     ],
-    heroImage: "/public/images/haw.webp",
+    heroImage: "/images/haw.webp",
 
     // Bespoke Contextual Section: Strategic Brand Architecture & Design Philosophy
     customSectionAr: {
@@ -303,7 +303,7 @@ export const services = [
         desc: "1080p MP4 & GIF motion assets ready for immediate publication across Reels and Stories.",
       },
     ],
-    heroImage: "/public/images/socail.webp",
+    heroImage: "/images/socail.webp",
 
     // Bespoke Contextual Section: Content Engineering & Platform Mastery Matrix
     customSectionAr: {
@@ -541,7 +541,7 @@ export const services = [
         desc: "High-resolution 3D preview renders showcasing how the finished print looks in real-world lighting.",
       },
     ],
-    heroImage: "/public/images/papers.webp",
+    heroImage: "/images/papers.webp",
 
     // Bespoke Contextual Section: Pre-Press Technical Precision & Luxury Finishing Standards
     customSectionAr: {
@@ -771,7 +771,7 @@ export const services = [
         desc: "Well-organized Photoshop master files enabling easy price, promo, or copy adjustments.",
       },
     ],
-    heroImage: "/public/images/ads.webp",
+    heroImage: "/images/ads.webp",
 
     // Bespoke Contextual Section: Campaign Conversion Architecture & Growth Framework
     customSectionAr: {
@@ -994,7 +994,7 @@ export const services = [
         desc: "Prioritized implementation checklist guiding your design team through each recommended upgrade.",
       },
     ],
-    heroImage: "/public/images/visul.webp",
+    heroImage: "/images/visul.webp",
 
     // Bespoke Contextual Section: Strategic Brand Diagnostic Protocol & Growth Roadmap
     customSectionAr: {

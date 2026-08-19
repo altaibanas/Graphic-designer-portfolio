@@ -228,9 +228,15 @@
     "rights": "All rights reserved © {{year}} Anas Al-Tayeb | Crafted with passion"
   },
   "about": {
+    "pageTitle": "About Anas Al-Tayeb | Graphic & Brand Identity Designer",
+    "metaDesc": "Get to know Anas Al-Tayeb, a passionate senior graphic & brand identity designer dedicated to turning ideas into captivating visual experiences.",
     "title": "About",
     "titleHighlight": "Me",
     "subtitle": "My journey through design, creative philosophy, and the skills refined over years of dedicated craft.",
+    "headerTitle": "About",
+    "headerHighlight": "Me",
+    "headerSubtitle": "My journey through design, creative philosophy, and the skills refined over years of dedicated craft.",
+    "headerBadge": "✦ About Me ✦",
     "name": "Anas Al-Tayeb",
     "role": "Graphic Designer & Brand Identity Developer",
     "degree": "B.Sc. in Computer Science from Sana'a University",

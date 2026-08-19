@@ -16,14 +16,14 @@ export const WhyChooseMe = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left Image & Floating Badge */}
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative reveal-left">
             <div className="relative max-w-md mx-auto">
               <img
                 src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                 alt="Anas Al-Tayeb graphic designer profile"
                 width={500}
                 height={500}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 className="rounded-3xl shadow-xl border-2 border-slate-200 dark:border-slate-800 object-cover w-full"
               />
@@ -46,7 +46,7 @@ export const WhyChooseMe = () => {
           </div>
 
           {/* Right Content */}
-          <div className="lg:w-1/2 text-center lg:text-start">
+          <div className="lg:w-1/2 text-center lg:text-start reveal-right">
             <span className="inline-block bg-amber-500/10 text-amber-600 dark:text-amber-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black mb-4 border border-amber-500/20">
               {t("whyMe.badge")}
             </span>

@@ -9,7 +9,7 @@ export const CtaBanner = () => {
   return (
     <section
       id="contact-cta"
-      className="py-16 md:py-20 bg-gradient-to-r from-night-950 via-slate-900 to-night-950 text-white relative overflow-hidden transition-colors duration-300"
+      className="py-16 md:py-20 bg-gradient-to-r from-night-950 via-slate-900 to-night-950 text-white relative overflow-hidden transition-colors duration-300 reveal-up"
     >
       <div className="decorative-dots top-5 start-5 opacity-40" aria-hidden="true" />
       <div className="decorative-dots bottom-5 end-5 opacity-40" aria-hidden="true" />

@@ -28,7 +28,7 @@ export const ProjectCard = memo(({ item, onImageClick }) => {
   };
 
   return (
-    <article className="card-hover group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/40 dark:hover:border-amber-500/30">
+    <article className="card-hover group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/40 dark:hover:border-amber-500/30 reveal-scale">
       {/* 16:9 Aspect Ratio Container to prevent Layout Shift (CLS) */}
       <div
         className="relative overflow-hidden aspect-video cursor-pointer bg-slate-100 dark:bg-slate-800/80 flex items-center justify-center"

@@ -17,7 +17,7 @@ export const BlogCard = memo(({ post }) => {
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
   return (
-    <article className="card-hover group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/40 dark:hover:border-amber-500/30">
+    <article className="card-hover group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden shadow-sm dark:shadow-glass-dark border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between transition-all duration-300 hover:border-amber-500/40 dark:hover:border-amber-500/30 reveal-up">
       <div>
         <div className="relative overflow-hidden aspect-video bg-slate-100 dark:bg-slate-800">
           <picture className="w-full h-full block">

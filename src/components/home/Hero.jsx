@@ -32,7 +32,7 @@ export const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
           {/* Text Content */}
-          <div className="lg:w-1/2 text-center lg:text-start">
+          <div className="lg:w-1/2 text-center lg:text-start reveal-up">
             <span className="inline-flex items-center gap-1.5 bg-white/10 dark:bg-slate-800/60 backdrop-blur-md text-amber-300 px-4 py-2 rounded-full text-xs sm:text-sm font-bold mb-6 border border-amber-500/30 shadow-sm">
               <Sparkles
                 size={14}
@@ -98,10 +98,10 @@ export const Hero = () => {
           </div>
 
           {/* Hero Mockup Image (LCP Prioritized) & Floating Card */}
-          <div className="lg:w-1/2 flex justify-center relative">
+          <div className="lg:w-1/2 flex justify-center relative reveal-scale delay-100">
             <div className="relative max-w-md lg:max-w-lg">
               <img
-                src="public/images/hero.webp"
+                src="/images/hero.webp"
                 alt="Anas Al-Tayeb creative branding and design showcase"
                 width={400}
                 height={250}

@@ -7,10 +7,13 @@ import { ServiceCard } from "../components/services/ServiceCard";
 import { ProcessSteps } from "../components/services/ProcessSteps";
 import { CtaBanner } from "../components/common/CtaBanner";
 import { services } from "../data/servicesData";
+import { usePageTheme } from "../hooks/usePageTheme";
 
 export const ServicesPage = () => {
   const { t } = useTranslation();
   const { isRtl } = useLanguage();
+
+  usePageTheme("page-services");
 
   const title = isRtl
     ? "خدمات التصميم - الهوية البصرية، السوشيال ميديا، والمطبوعات"

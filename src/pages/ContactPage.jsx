@@ -5,10 +5,13 @@ import { SEO } from "../components/common/SEO";
 import { PageHeader } from "../components/common/PageHeader";
 import { ContactForm } from "../components/contact/ContactForm";
 import { ContactInfo } from "../components/contact/ContactInfo";
+import { usePageTheme } from "../hooks/usePageTheme";
 
 export const ContactPage = () => {
   const { t } = useTranslation();
   const { isRtl } = useLanguage();
+
+  usePageTheme("page-contact");
 
   const title = isRtl
     ? "تواصل معي - ابدأ مشروعك التصميمي القادم"
@@ -54,8 +57,12 @@ export const ContactPage = () => {
         <section className="py-20 bg-slate-50 dark:bg-[#0a0e17] transition-colors duration-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              <ContactInfo />
-              <ContactForm />
+              <div className="reveal-left">
+                <ContactInfo />
+              </div>
+              <div className="reveal-right">
+                <ContactForm />
+              </div>
             </div>
           </div>
         </section>

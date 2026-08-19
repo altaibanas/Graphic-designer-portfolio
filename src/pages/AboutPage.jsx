@@ -8,10 +8,13 @@ import { FeaturesBar } from "../components/home/FeaturesBar";
 import { CtaBanner } from "../components/common/CtaBanner";
 import { SEO } from "../components/common/SEO";
 import { useLanguage } from "../context/LanguageContext";
+import { usePageTheme } from "../hooks/usePageTheme";
 
 export const AboutPage = () => {
   const { t } = useTranslation();
   const { isRtl } = useLanguage();
+
+  usePageTheme("page-about");
 
   const personSchema = {
     "@context": "https://schema.org",
@@ -45,32 +48,32 @@ export const AboutPage = () => {
   return (
     <>
       <SEO
-        title={t("about.pageTitle") || "عن أنس الطيب | مصمم جرافيك وهوية بصرية"}
-        description={t("about.metaDesc") || "تعرف على أنس الطيب، مصمم جرافيك وهوية بصرية شغوف بتحويل الأفكار إلى تصاميم استثنائية تبني الثقة وتعزز المبيعات."}
+        title={t("about.pageTitle")}
+        description={t("about.metaDesc")}
         canonicalUrl="/about"
         schemaType="ProfilePage"
         schemaData={personSchema}
       />
-      <div className="pt-20">
-      <PageHeader
-        title={t("about.headerTitle")}
-        highlight={t("about.headerHighlight")}
-        subtitle={t("about.headerSubtitle")}
-        badge={t("about.headerBadge")}
-      />
+      <div className="animate-in fade-in duration-300">
+        <PageHeader
+          title={t("about.title")}
+          highlight={t("about.titleHighlight")}
+          subtitle={t("about.subtitle")}
+          badge={t("about.storyBadge")}
+        />
 
       {/* Story & Background Section */}
       <section className="py-20 bg-white dark:bg-[#0a0e17] transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 reveal-left">
               <div className="relative max-w-md mx-auto">
                 <img
                   src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                   alt="Anas Al-Tayeb Graphic Designer"
                   width={500}
                   height={500}
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   className="rounded-3xl shadow-xl border-2 border-slate-200 dark:border-slate-800 object-cover w-full"
                 />
@@ -98,7 +101,7 @@ export const AboutPage = () => {
               </div>
             </div>
 
-            <div className="lg:w-1/2 text-center lg:text-start">
+            <div className="lg:w-1/2 text-center lg:text-start reveal-right">
               <span className="inline-block bg-amber-500/10 text-amber-600 dark:text-amber-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black mb-4 border border-amber-500/20">
                 {t("about.storyBadge")}
               </span>
@@ -133,7 +136,7 @@ export const AboutPage = () => {
       {/* Professional Values Section */}
       <section className="py-16 bg-slate-50 dark:bg-night-900 border-t border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-12 reveal-up">
             <span className="inline-block bg-amber-500/10 text-amber-600 dark:text-amber-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black mb-3 border border-amber-500/20">
               {t("about.valuesBadge")}
             </span>
@@ -146,7 +149,7 @@ export const AboutPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-amber-500/40 transition-colors">
+            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-amber-500/40 transition-colors reveal-scale delay-100">
               <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Lightbulb size={24} strokeWidth={1.75} aria-hidden="true" />
               </div>
@@ -158,7 +161,7 @@ export const AboutPage = () => {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-amber-500/40 transition-colors">
+            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-amber-500/40 transition-colors reveal-scale delay-200">
               <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <CheckCircle2 size={24} strokeWidth={1.75} aria-hidden="true" />
               </div>
@@ -170,7 +173,7 @@ export const AboutPage = () => {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-amber-500/40 transition-colors">
+            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm group hover:border-amber-500/40 transition-colors reveal-scale delay-300">
               <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <MessageSquare size={24} strokeWidth={1.75} aria-hidden="true" />
               </div>
@@ -188,7 +191,7 @@ export const AboutPage = () => {
       {/* Skills Proficiency Section */}
       <section className="py-20 bg-white dark:bg-[#0a0e17] border-t border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-16 reveal-up">
             <span className="inline-block bg-amber-500/10 text-amber-600 dark:text-amber-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-black mb-4 border border-amber-500/20">
               {t("about.skillsBadge")}
             </span>
@@ -204,13 +207,13 @@ export const AboutPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-slate-50 dark:bg-slate-850 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+            <div className="bg-slate-50 dark:bg-slate-850 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 reveal-left">
               <SkillBar name="Adobe Photoshop" percentage={95} />
               <SkillBar name="Adobe Illustrator" percentage={90} />
               <SkillBar name="Adobe InDesign" percentage={85} />
             </div>
 
-            <div className="bg-slate-50 dark:bg-slate-850 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+            <div className="bg-slate-50 dark:bg-slate-850 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-5 reveal-right">
               <SkillBar name="Figma & Adobe XD" percentage={92} />
               <SkillBar name="Adobe After Effects" percentage={75} />
               <SkillBar name="CorelDRAW" percentage={80} />
@@ -222,7 +225,7 @@ export const AboutPage = () => {
       {/* Why Choose Me Cards Section */}
       <section className="py-16 bg-slate-50 dark:bg-night-900 border-t border-slate-200 dark:border-slate-800/80 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center max-w-3xl mx-auto mb-12 reveal-up">
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
               {t("about.whyChooseTitle")}{" "}
               <span className="text-amber-600 dark:text-amber-400">
@@ -232,7 +235,7 @@ export const AboutPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm reveal-scale delay-100">
               <div className="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-black flex items-center justify-center mb-4">
                 1
               </div>
@@ -244,7 +247,7 @@ export const AboutPage = () => {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm reveal-scale delay-200">
               <div className="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-black flex items-center justify-center mb-4">
                 2
               </div>
@@ -256,7 +259,7 @@ export const AboutPage = () => {
               </p>
             </div>
 
-            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+            <div className="bg-white dark:bg-slate-850 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm reveal-scale delay-300">
               <div className="w-10 h-10 rounded-full bg-amber-500 text-slate-950 font-black flex items-center justify-center mb-4">
                 3
               </div>
